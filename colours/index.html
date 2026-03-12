@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Veloso | Student ID - 77933</title>
 
-
+<!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -78,19 +78,24 @@ function getRandomNumber(max){
 // hex characters
 const hexChars = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 
+// Select elements from the page
 const button = document.getElementById("btn");
 const hexDisplay = document.getElementById("hex");
 const section = document.getElementById("colour-section");
 
+// When button is clicked generate new colour
 button.addEventListener("click", () => {
 
     let hex = "#";
 
+    // Build 6-character hex code
     for(let i = 0; i < 6; i++){
         hex += hexChars[getRandomNumber(16)];
     }
 
+    // Apply colour to section background
     section.style.backgroundColor = hex;
+       // Show hex code on screen
     hexDisplay.textContent = hex;
 
 });
