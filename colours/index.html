@@ -68,5 +68,34 @@ Background Colour: <span id="hex">#ffffff</span>
 
 </section>
 
+<script>
+
+// Generate random number
+function getRandomNumber(max){
+    return Math.floor(Math.random() * max);
+}
+
+// hex characters
+const hexChars = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+
+const button = document.getElementById("btn");
+const hexDisplay = document.getElementById("hex");
+const section = document.getElementById("colour-section");
+
+button.addEventListener("click", () => {
+
+    let hex = "#";
+
+    for(let i = 0; i < 6; i++){
+        hex += hexChars[getRandomNumber(16)];
+    }
+
+    section.style.backgroundColor = hex;
+    hexDisplay.textContent = hex;
+
+});
+
+</script>
+
 </body>
 </html>
